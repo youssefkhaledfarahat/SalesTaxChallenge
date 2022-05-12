@@ -21,13 +21,13 @@ public class FinalMain {
         totalTax = 0;
         while (input.hasNextLine()) {
 
-        	String line = input.nextLine(); //take the line
-        	String[] words = line.split(" "); //divide the line into tokens
-        	int qty = Integer.parseInt(words[0]); //first token is the quantity
+        	String line = input.nextLine();
+        	String[] words = line.split(" ");
+        	int qty = Integer.parseInt(words[0]);
         	int priceIndex = line.lastIndexOf("at");
         	String ItemName = line.substring(1, priceIndex);
     		float rawPrice = Float.parseFloat((line.substring(priceIndex + 2)));
-        	boolean imported = line.contains("imported"); //check if the item is imported
+        	boolean imported = line.contains("imported");
         	boolean choco = line.contains("chocolate");
         	boolean book = line.contains("book");
         	boolean meds = line.contains("pill");
