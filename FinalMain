@@ -35,28 +35,40 @@ public class FinalMain {
         		if (imported) {
         			if(choco||book||meds) {
             			float x = (rawPrice*5)/100;
-            			int x1 = (int)(Math.ceil(x/0.05));
+            			float x1 = (int)(Math.ceil(x/0.05));
             			float x2 = (x1*0.05f);
-            			System.out.println(qty+ItemName+":"+(rawPrice+x2));
+            			float out = rawPrice+x2;
+            	    	DecimalFormat format = new DecimalFormat("0.00");
+            	    	String formatted = format.format(out);
+            			System.out.println(qty+ItemName+":"+formatted);
             			totalTax = totalTax+x2;
             			total = total + (rawPrice+x2);
         			}else {
         			float x = (rawPrice*15)/100;
-        			float x1 = (Math.round(x/0.05));
+        			float x1 = (int)(Math.ceil(x/0.05));
         			float x2 = (x1*0.05f);
-        			System.out.println(qty+ItemName+":"+(rawPrice+x2));
+        			float out = rawPrice+x2;
+        	    	DecimalFormat format = new DecimalFormat("0.00");
+        	    	String formatted = format.format(out);
+        			System.out.println(qty+ItemName+":"+formatted);
         			totalTax = totalTax + (x2);
         			total = total + (rawPrice+x2);
         			}
         		}else if(choco||book||meds) {
-        			System.out.println(qty+ItemName+":"+(rawPrice));
+        	    	DecimalFormat format = new DecimalFormat("0.00");
+        	    	float out = rawPrice;
+        	    	String formatted = format.format(out);
+        			System.out.println(qty+ItemName+":"+formatted);
         			total = total + (rawPrice);
         		}
         		else {
         			float x = (rawPrice*10)/100;
-        			float x1 = (Math.round(x/0.05));
+        			float x1 = (int)(Math.ceil(x/0.05));
         			float x2 = (x1*0.05f);
-        			System.out.println(qty+ItemName+":"+(rawPrice+x2));
+        			float out = rawPrice+x2;
+        	    	DecimalFormat format = new DecimalFormat("0.00");
+        	    	String formatted = format.format(out);
+        			System.out.println(qty+ItemName+":"+formatted);
         			totalTax = totalTax + x2;
         			total = total + (rawPrice+x2);
 
